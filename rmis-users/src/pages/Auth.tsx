@@ -16,14 +16,14 @@ const Auth = () => {
   }, [session, navigate]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#F2FCE2] to-white">
-      <div className="w-full max-w-md p-8 space-y-6 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-[#4A5D3F]/10">
+    <div className="min-h-screen flex items-center justify-center bg-background">
+      <div className="w-full max-w-md p-8 space-y-6 bg-card/80 backdrop-blur-sm rounded-2xl shadow-lg border border-border">
         <div className="flex flex-col items-center space-y-2">
-          <Fish className="h-12 w-12 text-[#4A5D3F] animate-[bounce_2s_ease-in-out_infinite]" />
-          <h1 className="text-2xl font-bold text-[#4A5D3F]">
+          <Fish className="h-12 w-12 text-primary animate-[bounce_2s_ease-in-out_infinite]" />
+          <h1 className="text-2xl font-bold text-foreground">
             RMIS User Management
           </h1>
-          <p className="text-[#4A5D3F]/70">
+          <p className="text-muted-foreground">
             {isSignUp ? "Create your account" : "Sign in to your account"}
           </p>
         </div>
