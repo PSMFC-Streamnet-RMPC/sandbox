@@ -10,7 +10,7 @@ const queryClient = new QueryClient();
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <BrowserRouter basename="/sandbox/rmis-users">
+      <BrowserRouter basename="/sandbox/rmis-users/dist">
         <Routes>
           <Route path="/auth" element={<Auth />} />
           <Route
