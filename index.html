@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandbox | Prototypes</title>
+    <style>
+        :root {
+            --bg: #0d1117;
+            --surface: #161b22;
+            --border: #30363d;
+            --text: #e6edf3;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --accent-hover: #79b8ff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 3rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .prototypes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .prototype-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+
+        .prototype-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .prototype-card h2 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .prototype-card h2 a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .prototype-card h2 a:hover {
+            text-decoration: underline;
+        }
+
+        .prototype-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .prototype-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .tag {
+            background: rgba(88, 166, 255, 0.15);
+            color: var(--accent);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-muted);
+        }
+
+        .empty-state h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .empty-state code {
+            background: var(--surface);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🧪 Sandbox</h1>
+            <p class="subtitle">Rapid prototypes and experiments</p>
+        </header>
+
+        <main>
+            <div class="prototypes-grid">
+                <!-- Prototype cards will be added here -->
+
+                <!-- Example card (uncomment when you have prototypes):
+                <article class="prototype-card">
+                    <h2><a href="./example-prototype/">Example Prototype</a></h2>
+                    <p>A brief description of what this prototype demonstrates or experiments with.</p>
+                    <div class="prototype-meta">
+                        <span class="tag">HTML/CSS</span>
+                        <span>Jan 2026</span>
+                    </div>
+                </article>
+                -->
+            </div>
+
+            <div class="empty-state">
+                <h2>Ready for prototypes</h2>
+                <p>Add your first prototype to <code>sandbox/your-prototype/index.html</code></p>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
