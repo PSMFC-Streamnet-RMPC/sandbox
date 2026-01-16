@@ -18,6 +18,9 @@ npm-debug.log*
 dist/
 build/
 
+# Exception: allow rmis-users/dist for GitHub Pages deployment
+!rmis-users/dist/
+
 # Environment files
 .env
 .env.local
