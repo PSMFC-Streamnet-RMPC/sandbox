@@ -148,6 +148,7 @@ export const ProfileApiKey = ({ apiKey, userEmail, userName, userId }: ProfileAp
               variant="outline"
               size="sm"
               className="flex items-center gap-1.5"
+              disabled
             >
               <Mail className="h-3.5 w-3.5" />
               Email API Key
@@ -175,6 +176,7 @@ export const ProfileApiKey = ({ apiKey, userEmail, userName, userId }: ProfileAp
               variant="outline"
               size="sm"
               className="flex items-center gap-1.5"
+              disabled
             >
               <KeyRound className="h-3.5 w-3.5" />
               Send Password Reset
