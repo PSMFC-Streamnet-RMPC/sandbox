@@ -11,6 +11,13 @@ const Users = () => {
       <header className="bg-card/80 backdrop-blur-sm border-b border-border sticky top-0 z-10">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
+            <a
+              href="/sandbox/"
+              className="text-muted-foreground hover:text-foreground text-sm transition-colors mr-2"
+            >
+              ← Sandbox
+            </a>
+            <span className="text-muted-foreground">|</span>
             <Fish className="h-8 w-8 text-primary animate-[bounce_2s_ease-in-out_infinite]" />
             <h1 className="text-xl font-bold text-foreground">RMIS User Management</h1>
           </div>

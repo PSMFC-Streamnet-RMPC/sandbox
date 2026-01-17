@@ -16,7 +16,13 @@ const Auth = () => {
   }, [session, navigate]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
+    <div className="min-h-screen flex items-center justify-center bg-background relative">
+      <a
+        href="/sandbox/"
+        className="absolute top-4 left-4 text-muted-foreground hover:text-foreground text-sm transition-colors"
+      >
+        ← Back to Sandbox
+      </a>
       <div className="w-full max-w-md p-8 space-y-6 bg-card/80 backdrop-blur-sm rounded-2xl shadow-lg border border-border">
         <div className="flex flex-col items-center space-y-2">
           <Fish className="h-12 w-12 text-primary animate-[bounce_2s_ease-in-out_infinite]" />
