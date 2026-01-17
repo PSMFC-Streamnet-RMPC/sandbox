@@ -8,12 +8,12 @@ interface ProfileFolderFieldProps {
 export const ProfileFolderField = ({ folder, onChange }: ProfileFolderFieldProps) => {
   return (
     <div className="space-y-2">
-      <label className="text-sm font-medium text-[#4A5D3F]">Folder</label>
+      <label className="text-sm font-medium text-foreground">Folder</label>
       <Input
         value={folder}
         onChange={(e) => onChange(e.target.value)}
         placeholder="Folder path"
-        className="border-[#4A5D3F]/20 focus:border-[#4A5D3F] focus:ring-[#4A5D3F]"
+        className="border-input focus:border-primary focus:ring-ring"
       />
     </div>
   );

@@ -13,7 +13,7 @@ export const SignUpFields = ({ name, setName, agency, setAgency }: SignUpFieldsP
   return (
     <>
       <div className="space-y-2">
-        <Label htmlFor="name" className="text-[#4A5D3F]">
+        <Label htmlFor="name" className="text-foreground">
           Full Name <span className="text-red-500">*</span>
         </Label>
         <Input
@@ -23,7 +23,7 @@ export const SignUpFields = ({ name, setName, agency, setAgency }: SignUpFieldsP
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
-          className="border-[#4A5D3F]/20 focus:border-[#4A5D3F] focus:ring-[#4A5D3F]"
+          className="border-input focus:border-primary focus:ring-ring"
         />
       </div>
       <ProfileAgencyField

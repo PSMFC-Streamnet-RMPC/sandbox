@@ -49,7 +49,7 @@ export const AuthForm = ({ onSubmit, isLoading, isSignUp, onToggleMode }: AuthFo
       />
       <Button
         type="submit"
-        className="w-full bg-[#4A5D3F] hover:bg-[#4A5D3F]/90"
+        className="w-full bg-primary hover:bg-primary/90"
         disabled={isLoading || (isSignUp && !name.trim())}
       >
         <Mail className="mr-2 h-4 w-4" />
@@ -58,7 +58,7 @@ export const AuthForm = ({ onSubmit, isLoading, isSignUp, onToggleMode }: AuthFo
       <Button
         type="button"
         variant="ghost"
-        className="w-full text-[#4A5D3F] hover:text-[#4A5D3F]/90 hover:bg-[#F2FCE2]"
+        className="w-full text-foreground hover:text-foreground hover:bg-accent"
         onClick={onToggleMode}
       >
         {isSignUp

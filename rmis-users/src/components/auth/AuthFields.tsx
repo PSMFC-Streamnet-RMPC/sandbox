@@ -12,7 +12,7 @@ export const AuthFields = ({ email, setEmail, password, setPassword }: AuthField
   return (
     <>
       <div className="space-y-2">
-        <Label htmlFor="email" className="text-[#4A5D3F]">
+        <Label htmlFor="email" className="text-foreground">
           Email <span className="text-red-500">*</span>
         </Label>
         <Input
@@ -22,11 +22,11 @@ export const AuthFields = ({ email, setEmail, password, setPassword }: AuthField
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className="border-[#4A5D3F]/20 focus:border-[#4A5D3F] focus:ring-[#4A5D3F]"
+          className="border-input focus:border-primary focus:ring-ring"
         />
       </div>
       <div className="space-y-2">
-        <Label htmlFor="password" className="text-[#4A5D3F]">
+        <Label htmlFor="password" className="text-foreground">
           Password <span className="text-red-500">*</span>
         </Label>
         <Input
@@ -36,9 +36,9 @@ export const AuthFields = ({ email, setEmail, password, setPassword }: AuthField
           onChange={(e) => setPassword(e.target.value)}
           required
           minLength={6}
-          className="border-[#4A5D3F]/20 focus:border-[#4A5D3F] focus:ring-[#4A5D3F]"
+          className="border-input focus:border-primary focus:ring-ring"
         />
-        <p className="text-sm text-[#4A5D3F]/70 mt-1">
+        <p className="text-sm text-foreground/70 mt-1">
           Note: Your password is securely encrypted and cannot be viewed by administrators.
         </p>
       </div>

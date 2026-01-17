@@ -48,7 +48,7 @@ export const UserProfile = ({ userId, onClose }: UserProfileProps) => {
   if (isLoading) {
     return (
       <div className="flex items-center justify-center p-8">
-        <Loader2 className="h-8 w-8 animate-spin text-[#4A5D3F]" />
+        <Loader2 className="h-8 w-8 animate-spin text-primary" />
       </div>
     );
   }
@@ -99,9 +99,9 @@ export const UserProfile = ({ userId, onClose }: UserProfileProps) => {
 
   return (
     <div className="space-y-6 p-6">
-      <div className="flex items-center gap-3 border-b border-[#4A5D3F]/20 pb-3">
-        <Fish className="h-6 w-6 text-[#4A5D3F] animate-[bounce_2s_ease-in-out_infinite]" />
-        <h2 className="text-xl font-semibold text-[#4A5D3F]">User Profile</h2>
+      <div className="flex items-center gap-3 border-b border-border pb-3">
+        <Fish className="h-6 w-6 text-primary animate-[bounce_2s_ease-in-out_infinite]" />
+        <h2 className="text-xl font-semibold text-foreground">User Profile</h2>
       </div>
       <div className="space-y-5">
         <ProfileBasicInfo
@@ -109,7 +109,7 @@ export const UserProfile = ({ userId, onClose }: UserProfileProps) => {
           onSave={handleProfileUpdate}
           onClose={onClose}
         />
-        <div className="border-t border-[#4A5D3F]/20 pt-5">
+        <div className="border-t border-border pt-5">
           <ProfileRoleStatus
             userDetails={userDetails}
             onRoleChange={setRole}
@@ -120,7 +120,7 @@ export const UserProfile = ({ userId, onClose }: UserProfileProps) => {
             pendingDataSubmitter={isDataSubmitter}
           />
         </div>
-        <div className="border-t border-[#4A5D3F]/20 pt-5">
+        <div className="border-t border-border pt-5">
           <ProfileApiKey
             apiKey={userDetails.api_key}
             userEmail={userDetails.email}

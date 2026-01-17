@@ -15,13 +15,13 @@ export const ProfileAgencyField = ({ agency, onChange }: ProfileAgencyFieldProps
 
   return (
     <div className="space-y-2">
-      <label className="text-sm font-medium text-[#4A5D3F]">Agency</label>
+      <label className="text-sm font-medium text-foreground">Agency</label>
       <Select
         value={agency}
         onValueChange={onChange}
         disabled={isLoadingAgencies}
       >
-        <SelectTrigger className="border-[#4A5D3F]/20 focus:ring-[#4A5D3F]">
+        <SelectTrigger className="border-input focus:ring-ring">
           <SelectValue placeholder="Select agency" />
         </SelectTrigger>
         <SelectContent>
@@ -29,7 +29,7 @@ export const ProfileAgencyField = ({ agency, onChange }: ProfileAgencyFieldProps
             <SelectItem
               key={a.agency}
               value={a.agency || ""}
-              className="hover:bg-[#F2FCE2] focus:bg-[#F2FCE2]"
+              className="hover:bg-accent focus:bg-accent"
             >
               {getAgencyDisplayName(a.agency || "", a.agency_name)}
             </SelectItem>
