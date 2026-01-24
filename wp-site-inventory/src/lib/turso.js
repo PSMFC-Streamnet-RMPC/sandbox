@@ -82,6 +82,7 @@ export const initializeSchema = async () => {
       wp_version TEXT,
       php_version TEXT,
       theme_name TEXT,
+      server TEXT,
       hosting_provider TEXT,
       detected_plugins TEXT,
 
@@ -98,6 +99,13 @@ export const initializeSchema = async () => {
       updated_at TEXT DEFAULT (datetime('now'))
     )
   `);
+
+  // Add server column if it doesn't exist (migration for existing tables)
+  try {
+    await db.execute('ALTER TABLE sites ADD COLUMN server TEXT');
+  } catch (e) {
+    // Column already exists, ignore error
+  }
 };
 
 // ============ SITE CRUD OPERATIONS ============
@@ -157,9 +165,9 @@ export const createSite = async (site) => {
   const result = await db.execute({
     sql: `INSERT INTO sites (
       name, url, description, status,
-      wp_version, php_version, theme_name, hosting_provider, detected_plugins,
+      wp_version, php_version, theme_name, server, hosting_provider, detected_plugins,
       contact_name, contact_email, notes, maintenance_window, ssl_expiry, tags
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
     args: [
       site.name,
       site.url,
@@ -168,6 +176,7 @@ export const createSite = async (site) => {
       site.wp_version || null,
       site.php_version || null,
       site.theme_name || null,
+      site.server || null,
       site.hosting_provider || null,
       site.detected_plugins ? JSON.stringify(site.detected_plugins) : null,
       site.contact_name || null,
@@ -195,6 +204,7 @@ export const updateSite = async (id, updates) => {
     wp_version: 'wp_version',
     php_version: 'php_version',
     theme_name: 'theme_name',
+    server: 'server',
     hosting_provider: 'hosting_provider',
     contact_name: 'contact_name',
     contact_email: 'contact_email',

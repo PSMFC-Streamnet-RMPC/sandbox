@@ -92,6 +92,28 @@ export const detectWordPressInfo = async (url) => {
       info.isWordPress = true;
     }
 
+    // Extract page title
+    const titleMatch = html.match(/<title[^>]*>([^<]+)<\/title>/i);
+    if (titleMatch) {
+      info.pageTitle = titleMatch[1].trim();
+    }
+
+    // Extract meta description (try multiple formats)
+    const metaDescMatch = html.match(/<meta[^>]*name=["']description["'][^>]*content=["']([^"']+)["']/i)
+      || html.match(/<meta[^>]*content=["']([^"']+)["'][^>]*name=["']description["']/i);
+    if (metaDescMatch) {
+      info.metaDescription = metaDescMatch[1].trim();
+    }
+
+    // Try Open Graph description as fallback
+    if (!info.metaDescription) {
+      const ogDescMatch = html.match(/<meta[^>]*property=["']og:description["'][^>]*content=["']([^"']+)["']/i)
+        || html.match(/<meta[^>]*content=["']([^"']+)["'][^>]*property=["']og:description["']/i);
+      if (ogDescMatch) {
+        info.metaDescription = ogDescMatch[1].trim();
+      }
+    }
+
     // Extract WordPress version from generator meta tag
     const generatorMatch = html.match(/<meta[^>]*name=["']generator["'][^>]*content=["']([^"']+)["']/i);
     if (generatorMatch) {

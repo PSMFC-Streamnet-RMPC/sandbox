@@ -42,12 +42,11 @@ function App() {
   return (
     <div className="app">
       <header className="header">
-        <h1>🌐 WordPress Site Inventory</h1>
-        <p>Track and monitor your WordPress websites</p>
+        <h1>Team Nancy WordPress Site Inventory</h1>
 
         <div className={`connection-status ${connection.status}`}>
           <span className="status-dot"></span>
-          {connection.status === 'connected' && 'Connected to Turso'}
+          {connection.status === 'connected' && 'Connected to database'}
           {connection.status === 'connecting' && 'Connecting...'}
           {connection.status === 'disconnected' && 'Not connected'}
         </div>
