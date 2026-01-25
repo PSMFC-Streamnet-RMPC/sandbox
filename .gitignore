@@ -18,8 +18,9 @@ npm-debug.log*
 dist/
 build/
 
-# Exception: allow rmis-users/dist for GitHub Pages deployment
+# Exception: allow dist folders for GitHub Pages deployment
 !rmis-users/dist/
+!wp-site-inventory/dist/
 
 # Environment files
 .env

@@ -46,6 +46,19 @@ body {
   margin-bottom: 2rem;
 }
 
+.back-link {
+  display: inline-block;
+  color: var(--gray-500);
+  text-decoration: none;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+  transition: color 0.15s;
+}
+
+.back-link:hover {
+  color: var(--primary);
+}
+
 .header h1 {
   font-size: 2rem;
   font-weight: 700;

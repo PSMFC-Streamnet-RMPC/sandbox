@@ -42,6 +42,7 @@ function App() {
   return (
     <div className="app">
       <header className="header">
+        <a href="/sandbox/" className="back-link">← Sandbox</a>
         <h1>Team Nancy WordPress Site Inventory</h1>
 
         <div className={`connection-status ${connection.status}`}>
